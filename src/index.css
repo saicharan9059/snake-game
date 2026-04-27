@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-neon-cyan: #22d3ee; /* cyan-400 */
+  --color-neon-pink: #d946ef; /* fuchsia-500 */
+  --color-neon-purple: #9333ea; /* purple-600 */
+  --color-dark-bg: #020205;
+  --color-panel-bg: #080810;
+}
+
+@layer base {
+  body {
+    @apply bg-dark-bg text-[#f0f0f0] font-sans selection:bg-neon-cyan/30;
+  }
+}
+
+.neon-border {
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.3), inset 0 0 5px rgba(34, 211, 238, 0.2);
+}
+
+.neon-text-cyan {
+  text-shadow: 0 0 8px rgba(34, 211, 238, 0.6);
+}
+
+.neon-text-pink {
+  text-shadow: 0 0 8px rgba(217, 70, 239, 0.6);
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom scrollbar for neon theme */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(34, 211, 238, 0.2);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 211, 238, 0.4);
+}
